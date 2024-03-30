@@ -1,1 +1,16 @@
-name: 
+name: Push of Docker Image of Docker Hub
+
+on: 
+    push:
+        branches:
+            main
+
+jobs:
+    push-docker-image:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout of repository
+              uses: actions/checkout@v4.1.1
+
+            - name: Print of actor-name
+              run : echo "${{ github.actor }}"   
